@@ -255,7 +255,7 @@ static void SubBytes(AES_state *s, int inv) {
     }
 }
 
-#define BIT_RANGE(from,to) (((1 << ((to) - (from))) - 1) << (from))
+#define BIT_RANGE(from,to) ((uint16_t)((1 << ((to) - (from))) - 1) << (from))
 
 #define BIT_RANGE_LEFT(x,from,to,shift) (((x) & BIT_RANGE((from), (to))) << (shift))
 #define BIT_RANGE_RIGHT(x,from,to,shift) (((x) & BIT_RANGE((from), (to))) >> (shift))
