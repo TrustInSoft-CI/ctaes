@@ -25,7 +25,7 @@
 static void LoadByte(AES_state* s, unsigned char byte, int r, int c) {
     int i;
     for (i = 0; i < 8; i++) {
-        s->slice[i] |= (byte & 1) << (r * 4 + c);
+        s->slice[i] |= (uint16_t)(byte & 1) << (r * 4 + c);
         byte >>= 1;
     }
 }
